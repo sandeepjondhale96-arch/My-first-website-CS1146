@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Music Playlist</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f4f6f9; /* soft neutral background */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        ol, ul {
+            display: inline-block;
+            text-align: left;
+            margin: 15px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        a:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>My Music Playlist</h1>
+
+    <p>Welcome to my <b>favorite</b> songs collection.<br>
+    Music makes life <i>beautiful</i> and fun!</p>
+
+    <h2>Top Songs</h2>
+    <ol>
+        <li>Shape of You - Ed Sheeran</li>
+        <li>Blinding Lights - The Weeknd</li>
+        <li>Rolling in the Deep - Adele</li>
+        <li>Someone Like You - Adele</li>
+        <li>Uptown Funk - Mark Ronson ft. Bruno Mars</li>
+    </ol>
+
+    <h2>Genres</h2>
+    <ul>
+        <li>Pop</li>
+        <li>R&B</li>
+        <li>Rock</li>
+        <li>Hip-Hop</li>
+        <li>Classical</li>
+    </ul>
+
+    <p>Discover more music on 
+    <a href="https://music.youtube.com" target="_blank">YouTube Music</a>.</p>
+
+    <!-- Feedback link -->
+    <p><a href="feedback.html" target="_blank">Give Feedback</a></p>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f0f2f5; /* faint, clean background */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        form {
+            background: white;
+            padding: 25px;
+            margin: 50px auto;
+            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 6px rgba(52,152,219,0.6);
+        }
+        button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 95%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form id="feedbackForm">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let username = document.getElementById("username").value;
+
+            if(password !== confirmPassword) {
+                document.getElementById("message").innerText = "❌ Passwords do not match!";
+                document.getElementById("message").style.color = "red";
+            } else {
+                document.getElementById("message").innerText = 
+                    "✅ Thank you, " + username + "! Your feedback has been submitted.";
+                document.getElementById("message").style.color = "green";
+            }
+        });
+    </script>
+</body>
+</html>
